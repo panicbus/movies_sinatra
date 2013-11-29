@@ -1,0 +1,12 @@
+<div id="index_display">
+    <p style="font-size: 30px">These movies match your search:</p>
+      <% @results.each do |result| %>
+        <p><a href="/movies/show/<%= result["imdbID"] %>"> </p>
+       <p><%= result["Title"] %>, <%= result["Year"] %></a></p>
+      <% end %>
+
+
+
+<a style="font-size: 25px" href="/">Search again?</a>
+</div>
+

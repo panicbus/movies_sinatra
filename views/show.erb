@@ -1,0 +1,27 @@
+
+<% if @result["Poster"] != "N/A" %>
+  <img id="poster" src=<%= @result["Poster"] %> >
+  <%else %>
+      <img id="poster" src=http://www.watchfilm.in/templates/MStarter/images/no-poster.jpg>
+  <% end %>
+<div id="results">
+  <p id="result_title"><%= @result["Title"] %>, <%= @result["Year"] %></p>
+  <p>Rated <%= @result["Rated"] %></p>
+  <p>Directed by: <%= @result["Director"] %></p>
+  <p>Written by: <%= @result["Writer"] %></p>
+  <p>Starring: <%= @result["Actors"] %></p>
+  <a onclick='toggle_the_div();' style="text-decoration: underline">-Click Here for More-</a>
+  <script type="text/javascript">
+    toggle_the_div = function () {
+    document.getElementById('the_more_div').classList.toggle('hide');
+    }
+  </script>
+  <div id="the_more_div" class="hide">
+    <p><%= @result["Runtime"] %></p>
+    <p><%= @result["Genre"] %></p>
+    <p><%= @result["Plot"] %></p>
+    <p>IMDB Rating: <%= @result["imdbRating"] %></p>
+  </div>
+
+  <p><a href="/" style="font-size: 22px">Search for another movie.</a></p>
+</div>
